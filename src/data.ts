@@ -12,7 +12,7 @@ export const personalInfo = {
   whatsappUrl: "https://wa.me/919061124162?text=Hi%20Ikbal,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!",
   instagram: "https://instagram.com/pixospar",
   linkedin: "https://linkedin.com/in/ikbal-km-digital-marketing-executive",
-  profileImage: "/images/profile.jpg"
+  profileImage: "/assets/profile.jpg"
 };
 
 export const stats = [
@@ -57,21 +57,21 @@ export const certificates: Certificate[] = [
     issuer: "The TET Skills",
     date: "January 2025",
     grade: "Grade A+",
-    imageRef: "/images/cert1.jpg"
+    imageRef: "/assets/cert-tet-merit.jpg"
   },
   {
     id: "cert2",
     title: "Digital Marketing Experience",
     issuer: "The TET Skills",
     date: "February 2025",
-    imageRef: "/images/cert2.jpg"
+    imageRef: "/assets/cert-tet-experience.jpg"
   },
   {
     id: "cert3",
     title: "Digital Marketing Internship",
     issuer: "Team Ynes",
     date: "April 2025",
-    imageRef: "/images/cert3.jpg"
+    imageRef: "/assets/cert-ynes-internship.jpg"
   }
 ];
 
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     id: "proj1",
     title: "Pixo Spark Organic Instagram Growth",
     category: "Social Media Growth",
-    imageRef: "/images/post1.jpg",
+    imageRef: "/assets/poster-pixo-spark.jpg",
     metrics: [
       { label: "Followers Gained", value: "+171" },
       { label: "Accounts Reached", value: "872" },
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     id: "proj2",
     title: "Skill Hub Meta Ads Lead Campaign",
     category: "Paid Acquisition",
-    imageRef: "/images/post2.jpg",
+    imageRef: "/assets/poster-tet-ads.jpg",
     metrics: [
       { label: "Ad budget", value: "₹150" },
       { label: "Qualified Leads", value: "5 Leads" },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     id: "proj3",
     title: "Prime Business Awards 2026 Poster",
     category: "Content Creative",
-    imageRef: "/images/post3.jpg",
+    imageRef: "/assets/poster-prime-business.jpg",
     tags: ["Event Design", "Typography Hierarchy", "Photoshop Layout", "Agency Aesthetic"],
     description: "Sleek and luxurious digital content creative crafted for the Prime Business Awards event series.",
     overview: "Crafted to capture the prestige and influence of business leaders, this poster balances premium slate and gold/orange lighting contrast. This layout is structured to maintain supreme luxury feel while maximizing social scroll-stop metrics.",
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     id: "proj4",
     title: "Ynes Digital Brand Poster",
     category: "Marketing Automation",
-    imageRef: "/images/post4.jpg",
+    imageRef: "/assets/poster-ynes.jpg",
     tags: ["AI Integrated Design", "Brand Authority", "Illustrator Vectors", "Direct Creative"],
     description: "Modern branding poster produced during Digital Marketing Internship representing modern technical supremacy.",
     overview: "Created during the Ynes digital marketing tenure to communicate technical competence and strategic brilliance. Designed with absolute precision to portray high trust and modern agency aesthetics.",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     id: "proj5",
     title: "TET Skills Ad Creative",
     category: "Paid Acquisition",
-    imageRef: "/images/post5.jpg",
+    imageRef: "/assets/poster-tet-offer.jpg",
     tags: ["Meta Creatives", "Direct-Response", "Canva Layouts", "A/B Ready Asset"],
     description: "Stellar performance marketing creative crafted to drive CTR on local vocational training courses.",
     overview: "Synthesized direct-response design conventions with native aesthetic looks to formulate a high-CTR Facebook and Instagram feed ad. Designed specifically for instant information processing under 2.5 seconds.",
