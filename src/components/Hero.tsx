@@ -140,7 +140,7 @@ export default function Hero() {
                 <PortfolioImage
                   src={personalInfo.profileImage}
                   alt={personalInfo.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   type="profile"
                 />
               </motion.div>

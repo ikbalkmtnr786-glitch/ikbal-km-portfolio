@@ -88,7 +88,7 @@ export default function Portfolio() {
                   <PortfolioImage
                     src={project.imageRef}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-103 transition-transform duration-500"
                     type="project"
                     metaData={{
                       title: project.title,
