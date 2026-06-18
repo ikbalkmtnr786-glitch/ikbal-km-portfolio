@@ -87,9 +87,8 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
             id="nav-logo"
             onClick={() => handleScrollTo('home')} 
             className="flex items-center gap-2 text-left group cursor-pointer focus:outline-none"
-          >
-          <div className="w-9 h-9 rounded-lg overflow-hidden border border-orange-400/20 group-hover:shadow-lg group-hover:shadow-orange-500/10 transition-all">
-              <img src="/pixo_new.jpg" alt="Pixo Spark Logo" className="w-full h-full object-cover" />
+            <div className="w-14 h-14 rounded-lg overflow-hidden border border-orange-400/20 group-hover:shadow-lg group-hover:shadow-orange-500/10 transition-all">
+              <img src="/pixo_new.jpg" alt="Pixo Spark Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-white font-sans font-bold text-base tracking-tight block">
