@@ -50,9 +50,9 @@ export default function Footer() {
               onClick={handleScrollToTop}
               className="flex items-center gap-2 group cursor-pointer focus:outline-none"
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center border border-orange-400/20 shadow-lg shadow-orange-500/5">
-                <Sparkles className="w-4.5 h-4.5 text-white" />
-              </div>
+             <div className="h-8 w-20 flex items-center justify-center">
+                <img src="/pixo-logo.png" alt="Pixo Spark Logo" className="w-full h-full object-contain" />
+              </div> 
               <div>
                 <span className="text-white font-sans font-bold text-base tracking-tight block">
                   {personalInfo.name}
