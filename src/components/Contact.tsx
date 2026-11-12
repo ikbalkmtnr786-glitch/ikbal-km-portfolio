@@ -5,8 +5,8 @@ import {
   Linkedin,
   Instagram,
   Send,
-  Smartphone,
-  CheckCircle
+  CheckCircle,
+  Smartphone
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../data';
@@ -16,19 +16,19 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     source: '',
-    purpose: 'Meta Ads & Campaign Support',
+    purpose: 'Meta Ads',
     message: ''
   });
-  const [feedback, setFeedback] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const purposes = [
-    'Meta Ads & Campaign Support',
+    'Meta Ads',
     'Social Media Management',
     'Graphic Design & Content Creation',
     'Shopify Store Setup',
     'Freelance Project Discussion',
     'Job / Career Opportunity',
-    'Other Enquiry'
+    'Other Inquiry'
   ];
 
   const handleInputChange = (
@@ -40,21 +40,21 @@ export default function Contact() {
       ...prev,
       [name]: value
     }));
-
-    setFeedback('');
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const message = `Hello Ikbal,
-
-Name: ${formData.name}
-Contact: ${formData.source || 'Not provided'}
-Enquiry: ${formData.purpose}
-
-Message:
-${formData.message}`;
+    const message = [
+      `Hello Ikbal,`,
+      '',
+      `Name: ${formData.name}`,
+      `Contact: ${formData.source}`,
+      `Purpose: ${formData.purpose}`,
+      '',
+      `Message:`,
+      formData.message
+    ].join('\n');
 
     if (deliveryMode === 'whatsapp') {
       const whatsappUrl = personalInfo.whatsappUrl;
@@ -62,15 +62,25 @@ ${formData.message}`;
       const finalUrl = `${whatsappUrl}${separator}text=${encodeURIComponent(message)}`;
 
       window.open(finalUrl, '_blank', 'noopener,noreferrer');
-      setFeedback('WhatsApp should open with your message ready to send. Please review and send it there.');
     } else {
-      const subject = encodeURIComponent(`Portfolio Enquiry: ${formData.purpose}`);
+      const subject = encodeURIComponent(`Portfolio Inquiry - ${formData.purpose}`);
       const body = encodeURIComponent(message);
       const mailtoUrl = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
 
       window.location.href = mailtoUrl;
-      setFeedback('Your email application should open with the enquiry details. Please review and send the email.');
     }
+
+    setIsSuccess(true);
+
+    window.setTimeout(() => {
+      setIsSuccess(false);
+      setFormData({
+        name: '',
+        source: '',
+        purpose: 'Meta Ads',
+        message: ''
+      });
+    }, 2500);
   };
 
   return (
@@ -78,49 +88,40 @@ ${formData.message}`;
       id="contact"
       className="py-24 bg-slate-950 relative overflow-hidden"
     >
-      {/* Background lights */}
       <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-orange-600/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-96 h-[1px] bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-mono text-orange-500 font-semibold uppercase tracking-widest block">
-            Get In Touch
+            Get in Touch
           </span>
-
           <h2 className="text-3xl sm:text-4xl font-sans font-black text-white tracking-tight">
             Let&apos;s Connect
           </h2>
-
-          <p className="text-sm text-slate-400 font-sans leading-relaxed">
-            Have a project, collaboration idea, or career opportunity?
-            Feel free to get in touch. I&apos;d be happy to hear from you.
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Have a project, a business requirement, or a career opportunity?
+            Send me a message and let&apos;s discuss how I can help.
           </p>
         </div>
 
-        {/* Contact and Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-          {/* Direct Contact Channels */}
           <div className="lg:col-span-5 space-y-8 text-left">
-
             <div className="space-y-4">
               <h3 className="text-xl font-sans font-bold text-white tracking-tight">
                 Contact Information
               </h3>
-
-              <p className="text-sm text-slate-400 leading-relaxed font-sans">
-                You can contact me directly through WhatsApp or email.
-                I&apos;m open to discussions about Meta Ads, social media,
-                content creation, Shopify support, and digital marketing roles.
+              <p className="text-sm text-slate-400 leading-relaxed">
+                You can contact me directly for Meta Ads, social media
+                management, content creation, Shopify support, freelance
+                projects, or suitable job opportunities.
               </p>
             </div>
 
             <div className="space-y-4">
 
-              {/* WhatsApp */}
               <a
                 id="contact-channel-whatsapp"
                 href={personalInfo.whatsappUrl}
@@ -131,7 +132,6 @@ ${formData.message}`;
                 <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-105 transition-transform">
                   <Smartphone className="w-5 h-5" />
                 </div>
-
                 <div>
                   <p className="text-[10px] font-mono text-slate-500 uppercase">
                     WhatsApp
@@ -142,7 +142,6 @@ ${formData.message}`;
                 </div>
               </a>
 
-              {/* Email */}
               <a
                 id="contact-channel-email"
                 href={`mailto:${personalInfo.email}`}
@@ -151,7 +150,6 @@ ${formData.message}`;
                 <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-105 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
-
                 <div className="min-w-0">
                   <p className="text-[10px] font-mono text-slate-500 uppercase">
                     Email Address
@@ -162,9 +160,7 @@ ${formData.message}`;
                 </div>
               </a>
 
-              {/* Social Links */}
               <div className="grid grid-cols-2 gap-4">
-
                 <a
                   id="contact-channel-linkedin"
                   href={personalInfo.linkedin}
@@ -190,43 +186,34 @@ ${formData.message}`;
                     Instagram
                   </span>
                 </a>
-
               </div>
             </div>
 
-            {/* Availability Note */}
-            <div className="p-4 rounded-xl border border-dashed border-slate-800 text-slate-400 text-xs space-y-2 font-sans leading-relaxed">
-              <p className="font-bold text-orange-500 uppercase tracking-wide">
-                Open to Opportunities
+            <div className="p-4 rounded-xl border border-dashed border-slate-800 text-slate-400 text-xs space-y-1.5">
+              <p className="font-bold text-orange-400 uppercase">
+                About Pixo Spark
               </p>
-              <p>
-                Available for suitable digital marketing projects,
-                freelance collaborations, and relevant job opportunities.
+              <p className="leading-relaxed">
+                Pixo Spark is my personal portfolio brand, where I showcase
+                digital marketing practice, creative work, and project
+                experience.
               </p>
             </div>
-
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-7 bg-slate-900/60 backdrop-blur-sm border border-slate-800 p-6 sm:p-8 rounded-2xl">
-
             <form onSubmit={handleSubmit} className="space-y-6 text-left">
 
-              {/* Delivery Method */}
               <div className="space-y-2">
                 <label className="text-[10px] font-mono uppercase text-slate-400 block font-semibold">
-                  Choose Contact Method
+                  Choose How to Contact Me
                 </label>
 
                 <div className="grid grid-cols-2 gap-2 bg-slate-950 p-1 rounded-xl border border-slate-800">
-
                   <button
                     type="button"
-                    onClick={() => {
-                      setDeliveryMode('whatsapp');
-                      setFeedback('');
-                    }}
-                    className={`py-2.5 rounded-lg text-xs font-mono tracking-wide uppercase font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                    onClick={() => setDeliveryMode('whatsapp')}
+                    className={`py-2 rounded-lg text-xs font-mono tracking-wide uppercase font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       deliveryMode === 'whatsapp'
                         ? 'bg-orange-500 text-slate-950 font-bold'
                         : 'text-slate-400 hover:text-white'
@@ -238,11 +225,8 @@ ${formData.message}`;
 
                   <button
                     type="button"
-                    onClick={() => {
-                      setDeliveryMode('email');
-                      setFeedback('');
-                    }}
-                    className={`py-2.5 rounded-lg text-xs font-mono tracking-wide uppercase font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                    onClick={() => setDeliveryMode('email')}
+                    className={`py-2 rounded-lg text-xs font-mono tracking-wide uppercase font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       deliveryMode === 'email'
                         ? 'bg-orange-500 text-slate-950 font-bold'
                         : 'text-slate-400 hover:text-white'
@@ -251,11 +235,9 @@ ${formData.message}`;
                     <Mail className="w-3.5 h-3.5" />
                     Email
                   </button>
-
                 </div>
               </div>
 
-              {/* Name and Contact */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                 <div className="space-y-1">
@@ -265,7 +247,6 @@ ${formData.message}`;
                   >
                     Your Name *
                   </label>
-
                   <input
                     id="name-input"
                     type="text"
@@ -274,7 +255,7 @@ ${formData.message}`;
                     onChange={handleInputChange}
                     required
                     placeholder="Enter your name"
-                    className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-3 text-sm text-white font-sans placeholder-slate-600 outline-none transition-colors"
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white font-sans placeholder-slate-600 outline-none transition-colors"
                   />
                 </div>
 
@@ -283,43 +264,40 @@ ${formData.message}`;
                     htmlFor="source-input"
                     className="text-[10px] font-mono text-slate-400 uppercase font-semibold"
                   >
-                    {deliveryMode === 'whatsapp' ? 'Phone / WhatsApp' : 'Your Email'}
+                    {deliveryMode === 'whatsapp' ? 'Your Phone Number *' : 'Your Email Address *'}
                   </label>
-
                   <input
                     id="source-input"
                     type={deliveryMode === 'whatsapp' ? 'tel' : 'email'}
                     name="source"
                     value={formData.source}
                     onChange={handleInputChange}
+                    required
                     placeholder={
                       deliveryMode === 'whatsapp'
                         ? 'Enter your phone number'
                         : 'Enter your email address'
                     }
-                    className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-3 text-sm text-white font-sans placeholder-slate-600 outline-none transition-colors"
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white font-sans placeholder-slate-600 outline-none transition-colors"
                   />
                 </div>
-
               </div>
 
-              {/* Enquiry Purpose */}
               <div className="space-y-1">
                 <label
                   htmlFor="purpose-select"
                   className="text-[10px] font-mono text-slate-400 uppercase font-semibold"
                 >
-                  What Is Your Enquiry About?
+                  What Are You Looking For?
                 </label>
-
                 <select
                   id="purpose-select"
                   name="purpose"
                   value={formData.purpose}
                   onChange={handleInputChange}
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-3 text-sm text-slate-300 outline-none transition-colors font-sans"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-300 outline-none transition-colors font-sans"
                 >
-                  {purposes.map((purpose) => (
+                  {purposes.map(purpose => (
                     <option key={purpose} value={purpose}>
                       {purpose}
                     </option>
@@ -327,7 +305,6 @@ ${formData.message}`;
                 </select>
               </div>
 
-              {/* Message */}
               <div className="space-y-1">
                 <label
                   htmlFor="message-input"
@@ -335,56 +312,51 @@ ${formData.message}`;
                 >
                   Your Message *
                 </label>
-
                 <textarea
                   id="message-input"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={5}
-                  placeholder="Tell me a little about your project, requirements, or opportunity..."
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-3 text-sm text-white font-sans placeholder-slate-600 outline-none resize-none transition-colors"
+                  rows={4}
+                  placeholder="Briefly describe your project, requirement, or opportunity..."
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-orange-500/50 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white font-sans placeholder-slate-600 outline-none resize-none transition-colors"
                 />
               </div>
 
-              {/* Submit */}
               <div>
                 <button
                   id="contact-form-submit"
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-orange-500 text-slate-950 hover:bg-orange-600 font-mono font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-orange-500/15 text-center focus:outline-none active:scale-[0.99]"
+                  disabled={isSuccess}
+                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-orange-500 text-slate-950 hover:bg-orange-600 font-mono font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-60 cursor-pointer shadow-lg shadow-orange-500/15 text-center focus:outline-none active:scale-[0.99]"
                 >
-                  {deliveryMode === 'whatsapp' ? (
+                  {isSuccess ? (
                     <>
-                      <Smartphone className="w-4 h-4" />
-                      Continue to WhatsApp
+                      <CheckCircle className="w-4 h-4" />
+                      Message Prepared
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      Open Email Application
+                      {deliveryMode === 'whatsapp'
+                        ? 'Continue to WhatsApp'
+                        : 'Open Email App'}
                     </>
                   )}
                 </button>
               </div>
 
-              {/* Honest Feedback */}
-              {feedback && (
+              {isSuccess && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-300 text-xs leading-relaxed flex items-start gap-2"
+                  className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs leading-relaxed"
                 >
-                  <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" />
-                  <p>{feedback}</p>
+                  Your message has been prepared. Please check WhatsApp or your
+                  email app and send it to complete your inquiry.
                 </motion.div>
               )}
-
-              <p className="text-[10px] text-slate-500 font-sans leading-relaxed">
-                This form prepares a message in WhatsApp or your email application.
-                You will need to review and send the message yourself.
-              </p>
 
             </form>
           </div>
