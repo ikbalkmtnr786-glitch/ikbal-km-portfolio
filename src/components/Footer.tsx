@@ -46,7 +46,6 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-900">
 
-          {/* Brand Block */}
           <div className="md:col-span-5 space-y-4">
             <button
               onClick={handleScrollToTop}
@@ -63,23 +62,20 @@ export default function Footer() {
             </button>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              A personal portfolio showcasing my work and learning in
-              digital marketing, Meta Ads, social media management,
-              graphic design, and Shopify support under the name{' '}
-              <span className="text-orange-500/90 font-mono">
-                Pixo Spark
-              </span>.
+              I work on digital marketing, Meta Ads, social media content,
+              creative design, and Shopify store setup. Pixo Spark is my
+              personal portfolio brand for showcasing my skills, learning,
+              and project work.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-bold">
               Quick Navigation
             </h4>
 
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-              {menuItems.map((item) => (
+              {menuItems.map(item => (
                 <button
                   key={item.id}
                   onClick={() => handleScrollTo(item.id)}
@@ -91,22 +87,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Connections */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-[10px] font-mono text-slate-500 uppercase tracking-widest font-bold">
-              Let&apos;s Connect
+              Connect With Me
             </h4>
 
-            <p className="text-xs text-slate-400 font-sans leading-relaxed">
-              For digital marketing projects, freelance collaborations,
-              or career opportunities, feel free to contact me.
+            <p className="text-xs text-slate-400 font-sans">
+              For project discussions, freelance work, or career opportunities,
+              feel free to get in touch.
             </p>
 
             <div className="flex gap-3 pt-1">
-
               <a
                 href={`mailto:${personalInfo.email}`}
-                aria-label="Send email"
+                aria-label="Email"
                 className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-orange-500/30 text-slate-400 hover:text-orange-400 flex items-center justify-center transition-colors shadow-lg"
               >
                 <Mail className="w-4 h-4" />
@@ -116,7 +110,7 @@ export default function Footer() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="LinkedIn profile"
+                aria-label="LinkedIn"
                 className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-orange-500/30 text-slate-400 hover:text-orange-400 flex items-center justify-center transition-colors shadow-lg"
               >
                 <Linkedin className="w-4 h-4" />
@@ -126,36 +120,28 @@ export default function Footer() {
                 href={personalInfo.instagram}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram profile"
+                aria-label="Instagram"
                 className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-orange-500/30 text-slate-400 hover:text-orange-400 flex items-center justify-center transition-colors shadow-lg"
               >
                 <Instagram className="w-4 h-4" />
               </a>
-
             </div>
           </div>
 
         </div>
 
-        {/* Copyright and Disclaimer */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] font-mono text-slate-500">
-
-          <div className="space-y-2 text-center md:text-left">
-
+          <div className="space-y-1 text-center md:text-left">
             <p>
-              &copy; {new Date().getFullYear()} Ikbal KM
-              <span className="mx-1.5">&bull;</span>
-              Pixo Spark
+              &copy; {new Date().getFullYear()} IKBAL KM &bull; PIXO SPARK
             </p>
 
-            <p className="text-[9px] text-slate-600 font-sans max-w-xl leading-relaxed">
-              Pixo Spark is my personal portfolio and independent
-              professional brand. It showcases my individual projects,
-              practical experience, creative work, and digital marketing
-              skills. It is not presented as an established agency or
-              corporate company.
+            <p className="text-[9px] text-slate-600 font-sans max-w-xl">
+              Pixo Spark is a personal portfolio brand managed by Ikbal KM.
+              It showcases individual skills, creative work, learning, and
+              project experience. It is not presented as an established
+              advertising agency or registered company.
             </p>
-
           </div>
 
           <button
@@ -167,10 +153,8 @@ export default function Footer() {
             <span className="text-[9px] uppercase tracking-wider font-semibold">
               Top
             </span>
-
             <ArrowUp className="w-3.5 h-3.5 text-orange-500" />
           </button>
-
         </div>
 
       </div>
