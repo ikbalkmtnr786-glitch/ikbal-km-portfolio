@@ -3,17 +3,18 @@ import { Project, Certificate, SkillCategory, Service } from './types';
 
 export const personalInfo = {
   name: "Ikbal KM",
-  title: "Social Media & Digital Marketing Executive",
-  tagline: "Meta Ads | Social Media | Content Creation",
-  badge: "Open to Digital Marketing Opportunities",
-  bio: "I'm an entry-level Digital Marketing professional with practical experience in Meta Ads, social media management, content creation and graphic design. I have worked on digital marketing campaigns during my internship and personal projects, and I'm currently building hands-on experience through client projects. I also have practical knowledge of Shopify store setup and AI-powered marketing tools. I'm passionate about creating meaningful digital content and helping businesses improve their online presence.",
+  title: "Social Media, Digital Marketing & Shopify Executive",
+  tagline: "Meta Ads | Shopify | Social Media | Content Creation",
+  badge: "Open to Digital Marketing & Shopify Opportunities",
+  bio: "I'm an entry-level Digital Marketing professional with practical experience in Meta Ads, social media management, content creation and graphic design. I have worked on a Meta Ads campaign during my digital marketing practical training and developed my skills through personal and client projects. I also have practical knowledge of Shopify store setup, theme customisation, product organisation and basic store settings. I'm interested in helping businesses build and improve their online presence through practical digital marketing and e-commerce support.",
   email: "ikbalkmtnr786@gmail.com",
   phone: "919061124162",
   phoneFormatted: "+91 90611 24162",
   whatsappUrl: "https://wa.me/919061124162?text=Hi%20Ikbal,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20an%20opportunity!",
-  instagram: "https://instagram.com/pixospar",
+  instagram: "https://instagram.com/pixospark",
   linkedin: "https://linkedin.com/in/ikbal-km-digital-marketing-executive",
-  profileImage: "/profile.jpg"
+  profileImage: "/profile.jpg",
+  location: "Thanur, Malappuram, Kerala, India"
 };
 
 export const stats = [
@@ -29,7 +30,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Meta Ads",
-        description: "Campaign setup, audience targeting, messaging campaigns, budget monitoring and performance reporting.",
+        description: "Practical experience with campaign setup, audience targeting, messaging campaigns, budget monitoring and performance reporting.",
         iconName: "Target"
       },
       {
@@ -49,17 +50,17 @@ export const skillCategories: SkillCategory[] = [
       },
       {
         name: "Google Ads",
-        description: "Foundational knowledge of Google Search Ads and campaign concepts, supported by Google Ads Search Certification.",
+        description: "Foundational knowledge of Google Search Ads and campaign concepts, supported by Google Ads Search Certification. No independent campaign execution experience claimed.",
         iconName: "Search"
       }
     ]
   },
   {
-    title: "E-commerce & Design",
+    title: "Shopify & Creative Design",
     skills: [
       {
         name: "Shopify",
-        description: "Practical experience with store setup, themes, products, collections, inventory settings and basic store customization.",
+        description: "Practical knowledge of store setup, theme customisation, products, collections, inventory settings, apps and basic store configuration.",
         iconName: "ShoppingBag"
       },
       {
@@ -141,11 +142,16 @@ export const projects: Project[] = [
       { label: "Ad Spend", value: "₹127.11" },
       { label: "Messaging Conversations", value: "5" }
     ],
-    tags: ["Meta Ads", "Messaging Campaign", "Audience Targeting", "Campaign Reporting"],
-    description: "A Meta Ads messaging campaign for an educational course, conducted with the institute's permission.",
-    overview: "Planned and executed a small-budget Meta Ads campaign to generate messaging conversations for TET Skills. The work included campaign setup, audience targeting, creative preparation and performance monitoring.",
+    tags: [
+      "Meta Ads",
+      "Messaging Campaign",
+      "Audience Targeting",
+      "Campaign Reporting"
+    ],
+    description: "A small-budget Meta Ads messaging campaign for an educational course, completed as part of practical digital marketing experience.",
+    overview: "Worked on a Meta Ads messaging campaign for TET Skills. The practical work included campaign setup, audience targeting, creative preparation and performance monitoring.",
     strategy: [
-      "Identified the educational course audience.",
+      "Identified the intended audience for the educational course.",
       "Prepared promotional ad creative and campaign messaging.",
       "Set up the campaign using the Meta Ads messaging objective.",
       "Monitored campaign delivery and messaging performance."
@@ -153,7 +159,7 @@ export const projects: Project[] = [
     results: [
       "Recorded 5 messaging conversations started.",
       "Reported campaign spend of ₹127.11.",
-      "Used the campaign as practical experience in Meta Ads setup and performance monitoring."
+      "Gained practical exposure to Meta Ads campaign setup and performance monitoring."
     ],
     relatedGallery: [
       "/images/post2.jpg",
@@ -170,7 +176,12 @@ export const projects: Project[] = [
       { label: "Organic Reach", value: "872" },
       { label: "Engagement Rate", value: "4.9%" }
     ],
-    tags: ["Personal Project", "Instagram Growth", "Content Creation", "Graphic Design"],
+    tags: [
+      "Personal Project",
+      "Instagram Growth",
+      "Content Creation",
+      "Graphic Design"
+    ],
     description: "An independent social media project developed to practise digital marketing, content creation and organic Instagram growth.",
     overview: "Built and managed Pixo Spark as a personal digital marketing portfolio brand. Created social media graphics and content to develop a consistent online presence and practise organic social media marketing.",
     strategy: [
@@ -195,11 +206,16 @@ export const projects: Project[] = [
     title: "Innovative Designs – Social Media Project",
     category: "Social Media Growth",
     imageRef: "/images/post1.jpg",
-    tags: ["Client Project", "Social Media Management", "Content Creation", "Meta Ads Planning"],
+    tags: [
+      "Client Project",
+      "Social Media Management",
+      "Content Creation",
+      "Meta Ads Planning"
+    ],
     description: "An ongoing social media project for an interior design business in Kerala.",
-    overview: "Working on the social media presence of Innovative Designs, an interior design business. The project focuses on Facebook and Instagram page management, promotional content and planning for Meta Ads campaigns.",
+    overview: "Working on the social media presence of Innovative Designs, an interior design business. The project focuses on Facebook and Instagram page management, promotional content and planning for future Meta Ads campaigns.",
     strategy: [
-      "Set up and organised the business's Facebook and Instagram presence.",
+      "Organised the business's Facebook and Instagram presence.",
       "Prepared social media content around interior design and false ceiling services.",
       "Created promotional creatives and short-form content.",
       "Planned Meta Ads activity to support future enquiry generation."
@@ -215,7 +231,12 @@ export const projects: Project[] = [
     title: "Prime Business Awards 2026 Poster",
     category: "Content Creative",
     imageRef: "/poster-prime-business.jpg",
-    tags: ["Poster Design", "Graphic Design", "Typography", "Photoshop"],
+    tags: [
+      "Poster Design",
+      "Graphic Design",
+      "Typography",
+      "Photoshop"
+    ],
     description: "A promotional poster design created for a business awards event.",
     overview: "Developed a promotional visual concept with a premium dark and gold colour direction, focusing on clear typography and event communication.",
     strategy: [
@@ -237,13 +258,18 @@ export const projects: Project[] = [
     title: "Digital Marketing Internship – Creative Work",
     category: "Content Creative",
     imageRef: "/poster-ynes.jpg",
-    tags: ["Internship Project", "Graphic Design", "AI-Assisted Content", "Social Media"],
+    tags: [
+      "Internship Project",
+      "Graphic Design",
+      "AI-Assisted Content",
+      "Social Media"
+    ],
     description: "Selected digital creative work developed during the digital marketing internship.",
-    overview: "Practised social media creative development and digital content preparation as part of the digital marketing internship at Team Ynes / The TET Skills.",
+    overview: "Practised social media creative development and digital content preparation as part of the digital marketing internship at Team Ynes.",
     strategy: [
       "Worked on promotional visual concepts.",
       "Used design tools to prepare social media creatives.",
-      "Applied AI tools for content ideas and creative assistance."
+      "Used AI tools for content ideas and creative assistance."
     ],
     results: [
       "Developed practical experience in digital creative production.",
@@ -258,19 +284,19 @@ export const projects: Project[] = [
 
 export const services: Service[] = [
   {
-    title: "Meta Ads Campaign Management",
-    description: "Campaign setup and management for Facebook and Instagram advertising.",
+    title: "Meta Ads Campaign Support",
+    description: "Practical Facebook and Instagram advertising support, from campaign setup to basic performance reporting.",
     iconName: "Target",
     details: [
       "Campaign objective selection and setup",
       "Audience research and targeting",
-      "Ad creative and copy coordination",
+      "Ad creative and copy preparation",
       "Budget monitoring and performance reporting"
     ]
   },
   {
     title: "Social Media Management",
-    description: "Practical support for maintaining a consistent and engaging social media presence.",
+    description: "Support for maintaining a consistent and engaging social media presence.",
     iconName: "Instagram",
     details: [
       "Facebook and Instagram page management",
@@ -291,7 +317,7 @@ export const services: Service[] = [
     ]
   },
   {
-    title: "Shopify Store Setup",
+    title: "Shopify Store Setup Support",
     description: "Basic Shopify store setup and product organisation support.",
     iconName: "ShoppingBag",
     details: [
