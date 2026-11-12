@@ -1,51 +1,107 @@
+
 import { Project, Certificate, SkillCategory, Service } from './types';
 
 export const personalInfo = {
   name: "Ikbal KM",
-  title: "Meta Ads Specialist & Social Media Strategist",
-  tagline: "2 Years. Real Campaigns. Real Results.",
-  badge: "Open to Meta Ads Roles & Freelance Projects",
-  bio: "I'm a Meta Ads Specialist and Social Media Strategist who builds high-ROI conversion systems. From delivering ₹30 CPL lead campaigns to engineering 4.9% engagement rates organically — I combine data-driven Meta Ads strategy, AI-powered content pipelines, and creative design to help brands grow profitably. Through Pixo Spark, my personal digital marketing brand, I fuse performance marketing with creative storytelling.",
+  title: "Social Media & Digital Marketing Executive",
+  tagline: "Meta Ads | Social Media | Content Creation",
+  badge: "Open to Digital Marketing Opportunities",
+  bio: "I'm an entry-level Digital Marketing professional with practical experience in Meta Ads, social media management, content creation and graphic design. I have worked on digital marketing campaigns during my internship and personal projects, and I'm currently building hands-on experience through client projects. I also have practical knowledge of Shopify store setup and AI-powered marketing tools. I'm passionate about creating meaningful digital content and helping businesses improve their online presence.",
   email: "ikbalkmtnr786@gmail.com",
   phone: "919061124162",
   phoneFormatted: "+91 90611 24162",
-  whatsappUrl: "https://wa.me/919061124162?text=Hi%20Ikbal,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!",
+  whatsappUrl: "https://wa.me/919061124162?text=Hi%20Ikbal,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20an%20opportunity!",
   instagram: "https://instagram.com/pixospar",
   linkedin: "https://linkedin.com/in/ikbal-km-digital-marketing-executive",
   profileImage: "/profile.jpg"
 };
 
 export const stats = [
-  { value: "0 → 171", label: "Followers Gained" },
+  { value: "171", label: "Organic Followers Gained" },
   { value: "872", label: "Organic Accounts Reached" },
-  { value: "4.9%", label: "Average Engagement Rate" },
-  { value: "₹30", label: "Cost Per Lead (CPL)" }
+  { value: "4.9%", label: "Engagement Rate" },
+  { value: "5", label: "Messaging Conversations" }
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Marketing",
+    title: "Digital Marketing",
     skills: [
-      { name: "Meta Ads", description: "Audience research, custom audiences lookalikes, scaling bid strategies, pixel tracking, and high-ROI campaign setups.", iconName: "Target" },
-      { name: "Social Media Marketing", description: "Organic growth blueprints, strategic scheduling, interactive community building, and personal brand development.", iconName: "Compass" },
-      { name: "Content Creation", description: "Direct-response copywriting, dynamic hooks, and visual micro-content architecture that drives immediate clicks.", iconName: "Sparkles" },
-      { name: "SEO Fundamentals", description: "Critical search optimization, keywords planning, and structured layouts to rank content natively.", iconName: "Search" }
+      {
+        name: "Meta Ads",
+        description: "Campaign setup, audience targeting, messaging campaigns, budget monitoring and performance reporting.",
+        iconName: "Target"
+      },
+      {
+        name: "Social Media Marketing",
+        description: "Facebook and Instagram page management, content planning, post scheduling and organic audience engagement.",
+        iconName: "Compass"
+      },
+      {
+        name: "Content Creation",
+        description: "Social media captions, promotional content, creative concepts, marketing copy and content calendars.",
+        iconName: "Sparkles"
+      },
+      {
+        name: "SEO Fundamentals",
+        description: "Basic keyword research, on-page SEO concepts, website content structure and search visibility fundamentals.",
+        iconName: "Search"
+      },
+      {
+        name: "Google Ads",
+        description: "Foundational knowledge of Google Search Ads and campaign concepts, supported by Google Ads Search Certification.",
+        iconName: "Search"
+      }
     ]
   },
   {
-    title: "Design",
+    title: "E-commerce & Design",
     skills: [
-      { name: "Canva", description: "High-speed ad creative generation, branding template construction, dynamic slide carousels, and premium aesthetic layouts.", iconName: "LayoutGrid" },
-      { name: "Photoshop", description: "Advanced asset manipulation, detailed lighting adjustments, and composite visual creation for attention-grabbing ads.", iconName: "Image" },
-      { name: "Illustrator", description: "Sleek vector creation, precision logo files, cohesive brand elements, and crisp typography arrangements.", iconName: "PenTool" },
-      { name: "Video Editing", description: "High-retention reels cutdowns, pacing optimization, sound design overlays, and attention-hook subtitles integration.", iconName: "Video" }
+      {
+        name: "Shopify",
+        description: "Practical experience with store setup, themes, products, collections, inventory settings and basic store customization.",
+        iconName: "ShoppingBag"
+      },
+      {
+        name: "Canva",
+        description: "Social media posters, promotional creatives, carousel designs and marketing materials.",
+        iconName: "LayoutGrid"
+      },
+      {
+        name: "Photoshop",
+        description: "Image editing, promotional graphics, photo adjustments and social media creative design.",
+        iconName: "Image"
+      },
+      {
+        name: "Illustrator",
+        description: "Basic vector graphics, typography and visual design elements.",
+        iconName: "PenTool"
+      },
+      {
+        name: "Video Editing",
+        description: "Short-form video editing, Instagram Reels, promotional videos and captions using CapCut.",
+        iconName: "Video"
+      }
     ]
   },
   {
-    title: "AI Tools",
+    title: "AI & Productivity Tools",
     skills: [
-      { name: "ChatGPT", description: "Prompt engineering for high-conversion sales copy, buyer persona simulations, and marketing funnel outlines.", iconName: "BrainCircuit" },
-      { name: "Gemini", description: "Strategic market intelligence, search-grounded competitor research, and high-quality creative brief generation.", iconName: "Cpu" }
+      {
+        name: "ChatGPT",
+        description: "Marketing ideas, content planning, caption writing, research assistance and creative brainstorming.",
+        iconName: "BrainCircuit"
+      },
+      {
+        name: "Gemini",
+        description: "Content research, marketing assistance, idea generation and creative planning.",
+        iconName: "Cpu"
+      },
+      {
+        name: "Meta Business Suite",
+        description: "Facebook and Instagram account management, content publishing and basic performance monitoring.",
+        iconName: "Monitor"
+      }
     ]
   }
 ];
@@ -78,27 +134,55 @@ export const certificates: Certificate[] = [
 export const projects: Project[] = [
   {
     id: "proj1",
-    title: "Pixo Spark Organic Instagram Growth",
+    title: "TET Skills Meta Ads Campaign",
+    category: "Paid Acquisition",
+    imageRef: "/poster-tet-ads.jpg",
+    metrics: [
+      { label: "Ad Spend", value: "₹127.11" },
+      { label: "Messaging Conversations", value: "5" }
+    ],
+    tags: ["Meta Ads", "Messaging Campaign", "Audience Targeting", "Campaign Reporting"],
+    description: "A Meta Ads messaging campaign for an educational course, conducted with the institute's permission.",
+    overview: "Planned and executed a small-budget Meta Ads campaign to generate messaging conversations for TET Skills. The work included campaign setup, audience targeting, creative preparation and performance monitoring.",
+    strategy: [
+      "Identified the educational course audience.",
+      "Prepared promotional ad creative and campaign messaging.",
+      "Set up the campaign using the Meta Ads messaging objective.",
+      "Monitored campaign delivery and messaging performance."
+    ],
+    results: [
+      "Recorded 5 messaging conversations started.",
+      "Reported campaign spend of ₹127.11.",
+      "Used the campaign as practical experience in Meta Ads setup and performance monitoring."
+    ],
+    relatedGallery: [
+      "/images/post2.jpg",
+      "/images/post5.jpg"
+    ]
+  },
+  {
+    id: "proj2",
+    title: "Pixo Spark – Organic Instagram Growth",
     category: "Social Media Growth",
     imageRef: "/poster-pixo-spark.jpg",
     metrics: [
-      { label: "Followers Gained", value: "+171" },
-      { label: "Accounts Reached", value: "872" },
+      { label: "Followers", value: "171" },
+      { label: "Organic Reach", value: "872" },
       { label: "Engagement Rate", value: "4.9%" }
     ],
-    tags: ["Organic Growth", "Aesthetic Design", "Content Strategy", "Reels Pacing"],
-    description: "Multi-layered organic brand building strategy on Instagram under Ikbal's custom digital marketing page, Pixo Spark.",
-    overview: "Built an aesthetic, highly informative presence from zero for a personal digital marketing brand. By combining deep value carousels on performance marketing with attention-grabbing micro-reels, this strategy cultivated a professional digital ecosystem that earned 872 organic reach in 30 days.",
+    tags: ["Personal Project", "Instagram Growth", "Content Creation", "Graphic Design"],
+    description: "An independent social media project developed to practise digital marketing, content creation and organic Instagram growth.",
+    overview: "Built and managed Pixo Spark as a personal digital marketing portfolio brand. Created social media graphics and content to develop a consistent online presence and practise organic social media marketing.",
     strategy: [
-      "Designed a strict slate-dark grid styling with orange highlights mirroring high-end design agencies.",
-      "Engineered carousel frameworks featuring high-impact copywriting (Dynamic Hooks in the first 2 seconds).",
-      "Calculated engagement loops by directly replying and building connections with targeted digital marketing seekers.",
-      "Leveraged a specialized video-pacing format to increase reel retention metrics."
+      "Developed a consistent visual identity for the Instagram page.",
+      "Created educational and promotional social media content.",
+      "Used graphic design and short-form content to communicate marketing ideas.",
+      "Monitored follower growth, reach and engagement."
     ],
     results: [
-      "Gained zero-to-one traction (171 real followers) organically within a highly competitive niche.",
-      "Achieved a 4.9% engagement rate, surpassing the industry average of 1.2%.",
-      "Reached 872 unique accounts strictly from organic content amplification and value shares."
+      "Grew the Instagram page to 171 followers.",
+      "Recorded 872 organic accounts reached.",
+      "Achieved a reported engagement rate of 4.9%."
     ],
     relatedGallery: [
       "/images/post1.jpg",
@@ -107,51 +191,41 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "proj2",
-    title: "Skill Hub Meta Ads Lead Campaign",
-    category: "Paid Acquisition",
-    imageRef: "/poster-tet-ads.jpg",
-    metrics: [
-      { label: "Ad budget", value: "₹150" },
-      { label: "Qualified Leads", value: "5 Leads" },
-      { label: "Cost Per Lead", value: "₹30 CPL" }
-    ],
-    tags: ["Meta Ads", "Lead Generation", "Direct-Response Ads", "CPL Optimization"],
-    description: "Laser-focused lead generation campaign utilizing Meta Ads Manager to capture highly qualified educational leads.",
-    overview: "Formulated and deployed a direct-response ad campaign on Meta to acquire target inquiries for educational skills courses. With limited trial spending, the campaign delivered high intent and minimal friction, proving that structural setup outperforms bloated budgets.",
+    id: "proj3",
+    title: "Innovative Designs – Social Media Project",
+    category: "Social Media Growth",
+    imageRef: "/images/post1.jpg",
+    tags: ["Client Project", "Social Media Management", "Content Creation", "Meta Ads Planning"],
+    description: "An ongoing social media project for an interior design business in Kerala.",
+    overview: "Working on the social media presence of Innovative Designs, an interior design business. The project focuses on Facebook and Instagram page management, promotional content and planning for Meta Ads campaigns.",
     strategy: [
-      "Designed high-contrast, text-led story creatives using direct-response templates on Canva.",
-      "Segmented demographic profiles based on skill interest categories, setting custom geo-targets to avoid wasted impressions.",
-      "Constructed a light interactive lead form with custom qualifying fields, screening out automated bots and spam submissions.",
-      "Ran live A/B creative testing focusing the orange direct CTA at the core of the design."
+      "Set up and organised the business's Facebook and Instagram presence.",
+      "Prepared social media content around interior design and false ceiling services.",
+      "Created promotional creatives and short-form content.",
+      "Planned Meta Ads activity to support future enquiry generation."
     ],
     results: [
-      "Acquired exactly 5 high-intent direct student leads with a micro-test budget of ₹150.",
-      "Secured an outstanding cost-per-lead (CPL) profile of exactly ₹30.",
-      "Maintained a 100% submission validity, where leads were verified through phone validation checks."
-    ],
-    relatedGallery: [
-      "/images/post2.jpg",
-      "/images/post5.jpg"
+      "Social media account setup and management activities are underway.",
+      "Promotional content creation and publishing are part of the ongoing work.",
+      "Advertising performance will be added after the campaign is launched and measured."
     ]
   },
   {
-    id: "proj3",
+    id: "proj4",
     title: "Prime Business Awards 2026 Poster",
     category: "Content Creative",
     imageRef: "/poster-prime-business.jpg",
-    tags: ["Event Design", "Typography Hierarchy", "Photoshop Layout", "Agency Aesthetic"],
-    description: "Sleek and luxurious digital content creative crafted for the Prime Business Awards event series.",
-    overview: "Crafted to capture the prestige and influence of business leaders, this poster balances premium slate and gold/orange lighting contrast. This layout is structured to maintain supreme luxury feel while maximizing social scroll-stop metrics.",
+    tags: ["Poster Design", "Graphic Design", "Typography", "Photoshop"],
+    description: "A promotional poster design created for a business awards event.",
+    overview: "Developed a promotional visual concept with a premium dark and gold colour direction, focusing on clear typography and event communication.",
     strategy: [
-      "Defined a premium high-contrast dark palette to spotlight gold and bronze achievements details.",
-      "Constructed asymmetric column layouts that guide the viewer's eyes naturally from headline to key venue dates.",
-      "Fine-tuned image sharpeners and high-dynamic range levels inside Photoshop to render crisply on mobile screens."
+      "Used a dark visual background with gold accents.",
+      "Organised the information using a clear typography hierarchy.",
+      "Designed the layout for social media viewing."
     ],
     results: [
-      "Achieved immediate design acceptance from organizers without revision requests.",
-      "Drove organic signups rate during announcement phase through high graphic legibility.",
-      "Integrated as part of Pixo Spark's master design case studies."
+      "Created a completed promotional poster design.",
+      "Added the creative to the Pixo Spark design portfolio."
     ],
     relatedGallery: [
       "/images/post3.jpg",
@@ -159,85 +233,72 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "proj4",
-    title: "Ynes Digital Brand Poster",
-    category: "Marketing Automation",
+    id: "proj5",
+    title: "Digital Marketing Internship – Creative Work",
+    category: "Content Creative",
     imageRef: "/poster-ynes.jpg",
-    tags: ["AI Integrated Design", "Brand Authority", "Illustrator Vectors", "Direct Creative"],
-    description: "Modern branding poster produced during Digital Marketing Internship representing modern technical supremacy.",
-    overview: "Created during the Ynes digital marketing tenure to communicate technical competence and strategic brilliance. Designed with absolute precision to portray high trust and modern agency aesthetics.",
+    tags: ["Internship Project", "Graphic Design", "AI-Assisted Content", "Social Media"],
+    description: "Selected digital creative work developed during the digital marketing internship.",
+    overview: "Practised social media creative development and digital content preparation as part of the digital marketing internship at Team Ynes / The TET Skills.",
     strategy: [
-      "Utilized AI assistance to speed draft content, mapping out target points before visual asset structuring.",
-      "Constructed clean vector icons inside Illustrator aligning with agency-grade marketing services.",
-      "Harmonized corporate dark-slate tones with lively orange-neon pops for modern eye-holding pacing."
+      "Worked on promotional visual concepts.",
+      "Used design tools to prepare social media creatives.",
+      "Applied AI tools for content ideas and creative assistance."
     ],
     results: [
-      "Deployed on official social marketing assets, boosting profile interactions during launch week.",
-      "Received honors for outstanding internship graphic work due to strong professional composition.",
-      "Integrated into the professional services showcase presentation."
+      "Developed practical experience in digital creative production.",
+      "Strengthened understanding of social media content requirements."
     ],
     relatedGallery: [
       "/images/post4.jpg",
       "/images/post1.jpg"
-    ]
-  },
-  {
-    id: "proj5",
-    title: "TET Skills Ad Creative",
-    category: "Paid Acquisition",
-    imageRef: "/poster-tet-offer.jpg",
-    tags: ["Meta Creatives", "Direct-Response", "Canva Layouts", "A/B Ready Asset"],
-    description: "Stellar performance marketing creative crafted to drive CTR on local vocational training courses.",
-    overview: "Synthesized direct-response design conventions with native aesthetic looks to formulate a high-CTR Facebook and Instagram feed ad. Designed specifically for instant information processing under 2.5 seconds.",
-    strategy: [
-      "Selected highly readable condensed typography designed to read clearly even on micro mobile phone layouts.",
-      "Placed the primary benefit statement under absolute premium contrast using a custom neon orange badge.",
-      "Maintained generous white/dark-slate space inside the layout, raising overall professionalism and conversion ratios."
-    ],
-    results: [
-      "Attained high ratings among experimental ad asset rosters of the campaign.",
-      "Maintained low ad fatigue score over dynamic marketing cycles.",
-      "Employed as reference blueprint template for future local direct-response campaigns."
-    ],
-    relatedGallery: [
-      "/images/post5.jpg",
-      "/images/post2.jpg"
     ]
   }
 ];
 
 export const services: Service[] = [
   {
-    title: "Paid Meta Ads Management",
-    description: "High-ROI Facebook & Instagram campaigns built on custom audience scaling models and optimized direct-response visuals.",
+    title: "Meta Ads Campaign Management",
+    description: "Campaign setup and management for Facebook and Instagram advertising.",
     iconName: "Target",
     details: [
-      "Laser-targeted audience setup & customer avatar mapping",
-      "Dynamic A/B creative testing of hooks and layouts",
-      "Qualifying Meta forms architecture (₹30 CPL-driven setups)",
-      "Pixel monitoring, Custom Audiences, & Retargeting funnels"
+      "Campaign objective selection and setup",
+      "Audience research and targeting",
+      "Ad creative and copy coordination",
+      "Budget monitoring and performance reporting"
     ]
   },
   {
-    title: "Organic Social Media Management",
-    description: "Premium visual grids and structured value schedules that construct real engagement systems and build brand authority.",
+    title: "Social Media Management",
+    description: "Practical support for maintaining a consistent and engaging social media presence.",
     iconName: "Instagram",
     details: [
-      "Custom brand typography systems (via Pixo Spark frameworks)",
-      "Educational micro-reels pacing and scroll-stopping templates",
-      "High-engagement carousel structures (4.9%+ direct metrics)",
-      "Community connection strategies & daily organic amplify routines"
+      "Facebook and Instagram page management",
+      "Content planning and scheduling",
+      "Post, Reel and promotional content creation",
+      "Basic performance monitoring"
     ]
   },
   {
-    title: "AI-Integrated Content Strategy",
-    description: "Amplify execution speed by integrating high-precision prompt pipelines into copywritting and content generation systems.",
+    title: "Graphic Design & Content Creation",
+    description: "Visual content and promotional materials for digital platforms.",
     iconName: "Sparkles",
     details: [
-      "Automated marketing briefs and customer objection simulations",
-      "Persuasive copywriting generation via optimized LLM presets",
-      "Rapid template batching for high-frequency ad creative tests",
-      "Fusing strategic marketing wisdom with state-of-the-art AI speed"
+      "Social media posters and promotional creatives",
+      "Marketing captions and content ideas",
+      "Carousel and campaign creative concepts",
+      "Short-form video and Reel editing"
+    ]
+  },
+  {
+    title: "Shopify Store Setup",
+    description: "Basic Shopify store setup and product organisation support.",
+    iconName: "ShoppingBag",
+    details: [
+      "Basic Shopify store configuration",
+      "Theme customisation",
+      "Product and collection setup",
+      "Basic inventory and store settings"
     ]
   }
 ];
