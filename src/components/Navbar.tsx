@@ -21,43 +21,38 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
     { id: 'credentials', label: 'Credentials' },
     { id: 'portfolio', label: 'Portfolio' },
     { id: 'services', label: 'Services' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const scrollPosition = window.scrollY + 150;
-      let currentSection = 'home';
+      const scrollPosition = window.scrollY + 120;
 
       for (const item of navItems) {
         const element = document.getElementById(item.id);
 
         if (element) {
-          const elementTop = element.offsetTop;
-          const elementBottom = elementTop + element.offsetHeight;
+          const { top, bottom } = element.getBoundingClientRect();
+          const elementTop = top + window.scrollY;
+          const elementBottom = bottom + window.scrollY;
 
           if (
             scrollPosition >= elementTop &&
-            scrollPosition < elementBottom
+            scrollPosition <= elementBottom
           ) {
-            currentSection = item.id;
+            setActiveSection(item.id);
             break;
           }
         }
       }
-
-      setActiveSection(currentSection);
     };
 
+    window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleScrollTo = (id: string) => {
@@ -67,19 +62,16 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
 
     if (element) {
       const offset = 80;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
-        top: elementPosition - offset,
+        top: offsetPosition,
         behavior: 'smooth'
       });
     }
-  };
-
-  const handleResumeClick = () => {
-    setIsOpen(false);
-    onResumeOpen();
   };
 
   return (
@@ -92,10 +84,8 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="flex items-center justify-between">
 
-          {/* Logo and Personal Brand */}
           <button
             id="nav-logo"
             onClick={() => handleScrollTo('home')}
@@ -114,21 +104,18 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
               <span className="text-white font-sans font-bold text-base tracking-tight block">
                 {personalInfo.name}
               </span>
-
               <span className="text-[10px] font-mono text-orange-400 tracking-wider uppercase block -mt-1 font-semibold">
                 Pixo Spark
               </span>
             </div>
           </button>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <button
                 key={item.id}
                 id={`nav-link-${item.id}`}
                 onClick={() => handleScrollTo(item.id)}
-                aria-current={activeSection === item.id ? 'location' : undefined}
                 className={`relative px-3 py-1.5 rounded-md text-xs font-mono tracking-wide transition-colors cursor-pointer focus:outline-none ${
                   activeSection === item.id
                     ? 'text-orange-400'
@@ -146,17 +133,15 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
                     }}
                   />
                 )}
-
                 {item.label}
               </button>
             ))}
           </div>
 
-          {/* Desktop Resume Button */}
           <div className="hidden lg:flex items-center">
             <button
               id="desktop-resume-btn"
-              onClick={handleResumeClick}
+              onClick={onResumeOpen}
               className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20 active:scale-95 transition-all text-center"
             >
               Resume
@@ -164,12 +149,10 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
             </button>
           </div>
 
-          {/* Mobile Controls */}
           <div className="flex lg:hidden items-center gap-3">
-
             <button
               id="mobile-resume-trigger"
-              onClick={handleResumeClick}
+              onClick={onResumeOpen}
               className="px-3 py-1.5 rounded-md bg-gradient-to-r from-orange-500 to-amber-600 text-slate-950 font-mono font-bold text-[10px] uppercase tracking-wider"
             >
               CV
@@ -189,13 +172,11 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
                 <Menu className="w-5 h-5" />
               )}
             </button>
-
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -207,13 +188,11 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
             className="lg:hidden w-full bg-slate-950 border-b border-slate-900 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1.5">
-
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <button
                   key={item.id}
                   id={`mobile-nav-link-${item.id}`}
                   onClick={() => handleScrollTo(item.id)}
-                  aria-current={activeSection === item.id ? 'location' : undefined}
                   className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-mono tracking-wide flex items-center justify-between ${
                     activeSection === item.id
                       ? 'bg-slate-900 border border-orange-500/20 text-orange-400 font-bold'
@@ -227,7 +206,6 @@ export default function Navbar({ onResumeOpen }: NavbarProps) {
                   )}
                 </button>
               ))}
-
             </div>
           </motion.div>
         )}
