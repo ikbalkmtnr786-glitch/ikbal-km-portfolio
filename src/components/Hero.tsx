@@ -73,7 +73,7 @@ export default function Hero() {
               >
                 Turning Ideas Into
                 <span className="block text-orange-400">
-                  Digital Experiences.
+                  Digital Growth.
                 </span>
               </motion.h1>
             </div>
