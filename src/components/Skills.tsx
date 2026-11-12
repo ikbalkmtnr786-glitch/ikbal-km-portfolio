@@ -1,5 +1,4 @@
 
-import React from 'react';
 import {
   Target,
   Compass,
@@ -15,12 +14,13 @@ import {
   Monitor,
   BarChart3
 } from 'lucide-react';
+
 import { motion } from 'motion/react';
 import { skillCategories } from '../data';
 
 export default function Skills() {
 
-  // Icon Finder Helper
+  // Find the icon associated with each skill
   const getIcon = (iconName: string) => {
     const props = { className: "w-5 h-5 text-orange-400" };
 
@@ -61,7 +61,7 @@ export default function Skills() {
       id="skills"
       className="py-24 bg-slate-950 relative overflow-hidden"
     >
-      {/* Decorative Orbs */}
+      {/* Decorative Background Elements */}
       <div className="absolute right-0 bottom-0 w-80 h-80 bg-orange-600/5 rounded-full blur-[120px]" />
       <div className="absolute left-10 top-10 w-60 h-60 bg-amber-500/5 rounded-full blur-[100px]" />
 
@@ -77,20 +77,20 @@ export default function Skills() {
             My Digital Marketing Toolkit
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto font-mono">
-            Practical skills in digital marketing, Shopify, social media, creative design and AI-powered tools.
+          <p className="text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+            My practical skills and tools across Meta Ads, social media marketing, Shopify, creative design and AI-assisted productivity.
           </p>
         </div>
 
-        {/* Skill Categories Loop */}
+        {/* Skill Categories */}
         <div className="space-y-12">
           {skillCategories.map((category, catIdx) => (
-            <div key={catIdx} className="space-y-6">
+            <div key={category.title} className="space-y-6">
 
               {/* Category Header */}
               <div className="flex items-center gap-3 border-b border-slate-900 pb-3">
                 <span className="text-xs font-mono font-bold text-orange-500 bg-orange-500/10 px-2.5 py-1 rounded">
-                  0{catIdx + 1}
+                  {String(catIdx + 1).padStart(2, '0')}
                 </span>
 
                 <h3 className="text-lg font-sans font-extrabold text-white uppercase tracking-wider">
@@ -99,19 +99,19 @@ export default function Skills() {
               </div>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {category.skills.map((skill, skillIdx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+                {category.skills.map((skill) => (
                   <motion.div
-                    key={skillIdx}
-                    id={`skill-card-${catIdx}-${skillIdx}`}
+                    key={skill.name}
+                    id={`skill-${catIdx}-${skill.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
+                    transition={{ duration: 0.4 }}
                     className="bg-slate-900/40 backdrop-blur-sm border border-slate-800 p-5 rounded-xl hover:border-orange-500/20 hover:bg-slate-900/80 transition-all duration-300 flex flex-col gap-3 group"
                   >
 
-                    {/* Icon & Name */}
+                    {/* Icon & Skill Name */}
                     <div className="flex items-center gap-2.5">
                       <div className="w-9 h-9 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center shrink-0 group-hover:bg-orange-500/10 group-hover:border-orange-500/20 transition-colors">
                         {getIcon(skill.iconName)}
@@ -122,8 +122,8 @@ export default function Skills() {
                       </h4>
                     </div>
 
-                    {/* Short Description */}
-                    <p className="text-xs sm:text-[12px] text-slate-400 leading-relaxed text-left">
+                    {/* Skill Description */}
+                    <p className="text-xs text-slate-400 leading-relaxed text-left">
                       {skill.description}
                     </p>
 
