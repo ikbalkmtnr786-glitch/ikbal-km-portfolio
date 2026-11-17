@@ -71,9 +71,9 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl font-sans font-black text-white tracking-tight leading-[1.1]"
               >
-                Turning Ideas Into
+                Practical Digital Marketing
                 <span className="block text-orange-400">
-                  Digital Growth.
+                  With a Business Focus.
                 </span>
               </motion.h1>
             </div>
@@ -108,7 +108,7 @@ export default function Hero() {
               <button
                 id="hero-cta-viewwork"
                 onClick={handleScrollToPortfolio}
-                className="group flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-mono font-bold text-xs uppercase tracking-wider transition-all active:scale-98 cursor-pointer focus:outline-none"
+                className="group flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-mono font-bold text-xs uppercase tracking-wider transition-all active:scale-98 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500"
               >
                 View My Projects
                 <ArrowDown className="w-4 h-4 text-orange-500 group-hover:translate-y-1 transition-transform" />
@@ -119,7 +119,7 @@ export default function Hero() {
                 href={personalInfo.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-500/15 hover:shadow-orange-500/25 transition-all active:scale-98"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider shadow-lg shadow-orange-500/15 hover:shadow-orange-500/25 transition-all active:scale-98 focus:outline-none focus:ring-2 focus:ring-orange-300"
               >
                 <MessageCircle className="w-4 h-4 fill-slate-950 text-slate-950" />
                 Contact on WhatsApp
@@ -150,7 +150,7 @@ export default function Hero() {
                 />
               </motion.div>
 
-              {/* Organic Reach Highlight */}
+              {/* Pixo Spark Organic Reach Highlight */}
               <motion.div
                 initial={{ x: -20, y: 10, opacity: 0 }}
                 animate={{ x: 0, y: 0, opacity: 1 }}
@@ -168,7 +168,7 @@ export default function Hero() {
                   <div>
                     <p className="text-sm font-mono font-bold text-white tracking-tight">872</p>
                     <p className="text-[10px] text-slate-400 font-sans leading-tight">
-                      Organic Accounts Reached
+                      Pixo Spark Organic Reach
                     </p>
                   </div>
                 </motion.div>
