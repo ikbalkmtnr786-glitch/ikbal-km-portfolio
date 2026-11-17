@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { X, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Sparkles, ArrowRight, TrendingUp, Target, Lightbulb } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { projects } from '../data';
 import type { Project } from '../types';
@@ -11,7 +11,6 @@ export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [zoomPoster, setZoomPoster] = useState<string | null>(null);
 
-  // Show only categories that currently contain projects
   const tabs = [
     'All',
     ...Array.from(new Set(projects.map((project) => project.category)))
@@ -21,7 +20,6 @@ export default function Portfolio() {
     ? projects
     : projects.filter((project) => project.category === activeTab);
 
-  // Handle Escape key and background scrolling for both modals
   useEffect(() => {
     const isModalOpen = Boolean(selectedProject || zoomPoster);
 
@@ -70,7 +68,8 @@ export default function Portfolio() {
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-400 font-mono leading-relaxed">
-            A selection of digital marketing projects, campaign experience, social media work and creative designs.
+            Real client work, practical campaign experience, personal projects
+            and creative work demonstrating my digital marketing skills.
           </p>
         </div>
 
@@ -112,7 +111,6 @@ export default function Portfolio() {
                 transition={{ duration: 0.3 }}
                 className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-orange-500/30 group transition-all duration-300 flex flex-col min-h-[450px]"
               >
-
                 {/* Project Image */}
                 <div className="relative h-56 w-full overflow-hidden bg-slate-950 shrink-0">
                   <PortfolioImage
@@ -131,13 +129,18 @@ export default function Portfolio() {
                   <span className="absolute top-4 left-4 z-10 text-[10px] font-mono bg-slate-950/90 text-orange-400 border border-slate-800 px-2.5 py-0.5 rounded-full uppercase">
                     {project.category}
                   </span>
+
+                  {project.id === 'proj1' && (
+                    <span className="absolute top-4 right-4 z-10 text-[9px] font-mono bg-emerald-950/90 text-emerald-400 border border-emerald-800/60 px-2.5 py-1 rounded-full uppercase">
+                      Client Campaign
+                    </span>
+                  )}
                 </div>
 
                 {/* Project Information */}
                 <div className="p-5 flex flex-col justify-between flex-grow text-left">
                   <div className="space-y-2.5">
 
-                    {/* Project Tags */}
                     <div className="flex flex-wrap gap-2">
                       {project.tags.slice(0, 3).map((tag) => (
                         <span
@@ -153,7 +156,7 @@ export default function Portfolio() {
                       {project.title}
                     </h3>
 
-                    <p className="text-xs text-slate-400 font-sans line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-400 font-sans line-clamp-3 leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -181,7 +184,6 @@ export default function Portfolio() {
                     </button>
                   </div>
                 </div>
-
               </motion.div>
             ))}
           </AnimatePresence>
@@ -205,7 +207,6 @@ export default function Portfolio() {
             id="portfolio-case-study-modal"
             className="fixed inset-0 z-[55] flex items-center justify-center p-3 sm:p-4"
           >
-
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -224,9 +225,8 @@ export default function Portfolio() {
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-modal-title"
-              className="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl w-full max-w-4xl overflow-hidden relative z-50 shadow-2xl max-h-[90vh] flex flex-col"
+              className="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl w-full max-w-5xl overflow-hidden relative z-50 shadow-2xl max-h-[90vh] flex flex-col"
             >
-
               {/* Close Button */}
               <button
                 id="case-modal-close"
@@ -268,7 +268,7 @@ export default function Portfolio() {
                   <div className="space-y-3">
                     <h2
                       id="project-modal-title"
-                      className="text-2xl sm:text-3xl font-sans font-black text-white tracking-tight"
+                      className="text-2xl sm:text-3xl font-sans font-black text-white tracking-tight pr-10"
                     >
                       {selectedProject.title}
                     </h2>
@@ -287,22 +287,22 @@ export default function Portfolio() {
 
                   {/* Project Metrics */}
                   <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 sm:p-6">
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-4">
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-5">
                       Reported Project Metrics
                     </p>
 
                     {selectedProject.metrics && selectedProject.metrics.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                         {selectedProject.metrics.map((met, mIdx) => (
                           <div
                             key={`${met.label}-${mIdx}`}
-                            className="text-center sm:text-left border-b sm:border-b-0 sm:border-r last:border-0 border-slate-800 pb-4 sm:pb-0 sm:pr-4"
+                            className="border-b border-slate-800 pb-3"
                           >
-                            <p className="text-3xl sm:text-4xl font-mono font-black text-orange-400 break-words">
+                            <p className="text-2xl sm:text-3xl font-mono font-black text-orange-400 break-words">
                               {met.value}
                             </p>
 
-                            <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider">
+                            <p className="text-[10px] sm:text-xs text-slate-400 mt-1 uppercase tracking-wider">
                               {met.label}
                             </p>
                           </div>
@@ -317,6 +317,130 @@ export default function Portfolio() {
                       </div>
                     )}
                   </div>
+
+                  {/* Innovative Designs Campaign Analysis */}
+                  {selectedProject.id === 'proj1' && (
+                    <div className="space-y-6">
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                          <TrendingUp className="w-5 h-5 text-orange-400" />
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm sm:text-base font-mono text-white font-bold uppercase tracking-wider">
+                            Campaign Performance Analysis
+                          </h3>
+                          <p className="text-[10px] text-slate-500 font-mono mt-1">
+                            Campaign period: 8–14 November 2026
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        {/* Observation 1 */}
+                        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Target className="w-4 h-4 text-orange-400" />
+                            <h4 className="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">
+                              Click-through Rate
+                            </h4>
+                          </div>
+
+                          <p className="text-3xl font-mono font-black text-white">
+                            0.40%
+                          </p>
+
+                          <p className="text-xs text-slate-400 leading-relaxed">
+                            The reported CTR indicates an opportunity to test stronger
+                            creatives, clearer messaging and more relevant audience segments.
+                            It is a signal for further testing, not a final judgement on
+                            campaign performance.
+                          </p>
+                        </div>
+
+                        {/* Observation 2 */}
+                        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Lightbulb className="w-4 h-4 text-orange-400" />
+                            <h4 className="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">
+                              Click-to-Message
+                            </h4>
+                          </div>
+
+                          <p className="text-3xl font-mono font-black text-white">
+                            ~15%
+                          </p>
+
+                          <p className="text-xs text-slate-400 leading-relaxed">
+                            13 WhatsApp conversations were recorded from 86 link clicks.
+                            This suggests that the transition from clicking the ad to
+                            starting a conversation deserves attention.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      {/* Improvement Areas */}
+                      <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-4">
+                        <h4 className="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">
+                          Areas for Improvement
+                        </h4>
+
+                        <ul className="space-y-3">
+                          {[
+                            "Test stronger visuals using genuine interior and false ceiling project photos.",
+                            "Make the main advertising message and customer benefit clearer.",
+                            "Review audience and location targeting to reduce unnecessary budget spread.",
+                            "Simplify the WhatsApp opening message to make enquiries easier.",
+                            "Track enquiry quality, site visits and sales instead of measuring conversations alone."
+                          ].map((item, index) => (
+                            <li
+                              key={index}
+                              className="flex gap-3 text-xs sm:text-sm text-slate-300 leading-relaxed"
+                            >
+                              <span className="text-orange-500 font-mono shrink-0">
+                                0{index + 1}
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Next Test */}
+                      <div className="bg-orange-500/5 border border-orange-500/20 rounded-2xl p-5 sm:p-6 space-y-4">
+                        <div className="flex items-center gap-2">
+                          <Lightbulb className="w-4 h-4 text-orange-400" />
+                          <h4 className="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">
+                            Recommended Next Test
+                          </h4>
+                        </div>
+
+                        <p className="text-xs text-slate-300 leading-relaxed">
+                          A proposed follow-up test could focus on a smaller set of
+                          relevant districts, an audience aged approximately 30–50,
+                          genuine project-based creatives and a simpler WhatsApp
+                          enquiry flow. The next campaign should be run only after
+                          client approval and should compare results against the
+                          previous campaign.
+                        </p>
+
+                        <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wide">
+                          Recommendation only • Not an achieved campaign result
+                        </p>
+                      </div>
+
+                      {/* Reporting Note */}
+                      <p className="text-[10px] text-slate-500 leading-relaxed">
+                        Reporting note: Ad spend excludes GST. Messaging conversations
+                        do not automatically represent qualified leads, confirmed
+                        bookings or sales. Lead quality and revenue have not yet been
+                        verified.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Overview and Strategy */}
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
@@ -401,7 +525,8 @@ export default function Portfolio() {
                       </div>
 
                       <p className="text-xs text-slate-400 leading-relaxed font-sans max-w-xl">
-                        Explore related designs and creative materials from this project. Select an image to view it in a larger format.
+                        Explore related designs and creative materials from this project.
+                        Select an image to view it in a larger format.
                       </p>
 
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-3">
@@ -460,7 +585,6 @@ export default function Portfolio() {
             id="portfolio-zoom-poster-modal"
             className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4"
           >
-
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
