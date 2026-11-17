@@ -3,10 +3,10 @@ import { Project, Certificate, SkillCategory, Service } from './types';
 
 export const personalInfo = {
   name: "Ikbal KM",
-  title: "Social Media, Digital Marketing & Shopify Executive",
-  tagline: "Meta Ads | Shopify | Social Media | Content Creation",
-  badge: "Open to Digital Marketing & Shopify Opportunities",
-  bio: "I'm an entry-level Digital Marketing professional with practical experience in Meta Ads, social media management, content creation and graphic design. I have worked on a Meta Ads campaign during my digital marketing practical training and developed my skills through personal and client projects. I also have practical knowledge of Shopify store setup, theme customisation, product organisation and basic store settings. I'm interested in helping businesses build and improve their online presence through practical digital marketing and e-commerce support.",
+  title: "Social Media & Digital Marketing Executive",
+  tagline: "Meta Ads | Content Creation | Social Media Marketing",
+  badge: "Open to Digital Marketing Opportunities",
+  bio: "I'm an entry-level Digital Marketing professional with practical experience in Meta Ads, social media management, content creation and graphic design. My practical work includes managing social media activities for a client business, running a Meta Ads messaging campaign and developing my own digital marketing brand, Pixo Spark. I also have working knowledge of Shopify store setup, theme customisation, product organisation and basic store settings. I'm focused on helping businesses improve their online presence through practical, measurable digital marketing activities.",
   email: "ikbalkmtnr786@gmail.com",
   phone: "919061124162",
   phoneFormatted: "+91 90611 24162",
@@ -14,14 +14,14 @@ export const personalInfo = {
   instagram: "https://instagram.com/pixospark",
   linkedin: "https://linkedin.com/in/ikbal-km-digital-marketing-executive",
   profileImage: "/profile.jpg",
-  location: "Thanur, Malappuram, Kerala, India"
+  location: "Tanur, Malappuram, Kerala, India"
 };
 
 export const stats = [
-  { value: "171", label: "Organic Followers Gained" },
-  { value: "872", label: "Organic Accounts Reached" },
-  { value: "4.9%", label: "Engagement Rate" },
-  { value: "5", label: "Messaging Conversations" }
+  { value: "171", label: "Organic Followers – Pixo Spark" },
+  { value: "872", label: "Organic Reach – Pixo Spark" },
+  { value: "13", label: "WhatsApp Conversations – Client Campaign" },
+  { value: "₹160", label: "Cost per Conversation – Client Campaign" }
 ];
 
 export const skillCategories: SkillCategory[] = [
@@ -30,12 +30,12 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Meta Ads",
-        description: "Practical experience with campaign setup, audience targeting, messaging campaigns, budget monitoring and performance reporting.",
+        description: "Practical experience with Facebook and Instagram campaign setup, audience targeting, messaging campaigns, budget monitoring and performance reporting.",
         iconName: "Target"
       },
       {
         name: "Social Media Marketing",
-        description: "Facebook and Instagram page management, content planning, post scheduling and organic audience engagement.",
+        description: "Facebook and Instagram page setup and management, content planning, publishing, post scheduling and organic audience engagement.",
         iconName: "Compass"
       },
       {
@@ -45,12 +45,12 @@ export const skillCategories: SkillCategory[] = [
       },
       {
         name: "SEO Fundamentals",
-        description: "Basic keyword research, on-page SEO concepts, website content structure and search visibility fundamentals.",
+        description: "Basic knowledge of keyword research, on-page SEO, website content structure and local search visibility.",
         iconName: "Search"
       },
       {
         name: "Google Ads",
-        description: "Foundational knowledge of Google Search Ads and campaign concepts, supported by Google Ads Search Certification. No independent campaign execution experience claimed.",
+        description: "Foundational knowledge of Google Search Ads, keyword intent, campaign structure and advertising concepts. No independent campaign execution experience claimed.",
         iconName: "Search"
       }
     ]
@@ -60,7 +60,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Shopify",
-        description: "Practical knowledge of store setup, theme customisation, products, collections, inventory settings, apps and basic store configuration.",
+        description: "Working knowledge of store setup, theme customisation, products, collections, inventory settings, apps and basic store configuration.",
         iconName: "ShoppingBag"
       },
       {
@@ -135,31 +135,46 @@ export const certificates: Certificate[] = [
 export const projects: Project[] = [
   {
     id: "proj1",
-    title: "TET Skills Meta Ads Campaign",
+    title: "Innovative Designs – Meta Ads & Social Media",
     category: "Paid Acquisition",
-    imageRef: "/poster-tet-ads.jpg",
+    imageRef: "/images/post1.jpg",
     metrics: [
-      { label: "Ad Spend", value: "₹127.11" },
-      { label: "Messaging Conversations", value: "5" }
+      { label: "Ad Spend (Excl. GST)", value: "₹2,085" },
+      { label: "Reach", value: "12,960" },
+      { label: "Impressions", value: "21,593" },
+      { label: "WhatsApp Conversations", value: "13" },
+      { label: "Cost per Conversation", value: "₹160" },
+      { label: "Link Clicks", value: "86" },
+      { label: "CTR", value: "0.40%" },
+      { label: "CPC", value: "₹24.24" }
     ],
     tags: [
+      "Real Client Project",
       "Meta Ads",
-      "Messaging Campaign",
-      "Audience Targeting",
-      "Campaign Reporting"
+      "Social Media Management",
+      "WhatsApp Campaign",
+      "Performance Reporting"
     ],
-    description: "A small-budget Meta Ads messaging campaign for an educational course, completed as part of practical digital marketing experience.",
-    overview: "Worked on a Meta Ads messaging campaign for TET Skills. The practical work included campaign setup, audience targeting, creative preparation and performance monitoring.",
+    description: "An ongoing digital marketing project for an interior design business in Kerala, including social media management and a completed Meta Ads messaging campaign.",
+    overview: "Worked on building and improving the digital presence of Innovative Designs. The work included Facebook and Instagram page setup, promotional content, Reels and an actual Meta Ads messaging campaign. The campaign ran from 8–14 November 2026. The business website is also under development and is not yet complete.",
     strategy: [
-      "Identified the intended audience for the educational course.",
-      "Prepared promotional ad creative and campaign messaging.",
-      "Set up the campaign using the Meta Ads messaging objective.",
-      "Monitored campaign delivery and messaging performance."
+      "Set up and organised the business's Facebook and Instagram presence.",
+      "Created promotional content around interior design, false ceiling and related services.",
+      "Prepared and published social media posts and short-form video content.",
+      "Set up and monitored a Meta Ads campaign focused on WhatsApp messaging conversations.",
+      "Managed campaign delivery and reviewed spend, reach, impressions, clicks and messaging performance.",
+      "Identified opportunities to improve creative performance, audience focus and the click-to-message journey."
     ],
     results: [
-      "Recorded 5 messaging conversations started.",
-      "Reported campaign spend of ₹127.11.",
-      "Gained practical exposure to Meta Ads campaign setup and performance monitoring."
+      "Campaign period: 8–14 November 2026.",
+      "Total ad spend: ₹2,085, excluding GST.",
+      "Reached 12,960 accounts and generated 21,593 impressions.",
+      "Recorded 86 link clicks and 13 WhatsApp messaging conversations.",
+      "Average cost per messaging conversation: approximately ₹160.",
+      "Reported CTR: 0.40%; CPC: ₹24.24; CPM: ₹96.55.",
+      "Approximately 15% of link clicks resulted in messaging conversations.",
+      "Lead quality, site visits and sales have not yet been confirmed or measured.",
+      "Website development is in progress; final project photos and business information are still awaited."
     ],
     relatedGallery: [
       "/images/post2.jpg",
@@ -203,27 +218,35 @@ export const projects: Project[] = [
   },
   {
     id: "proj3",
-    title: "Innovative Designs – Social Media Project",
-    category: "Social Media Growth",
-    imageRef: "/images/post1.jpg",
-    tags: [
-      "Client Project",
-      "Social Media Management",
-      "Content Creation",
-      "Meta Ads Planning"
+    title: "TET Skills Meta Ads Campaign",
+    category: "Paid Acquisition",
+    imageRef: "/poster-tet-ads.jpg",
+    metrics: [
+      { label: "Ad Spend", value: "₹127.11" },
+      { label: "Messaging Conversations", value: "5" }
     ],
-    description: "An ongoing social media project for an interior design business in Kerala.",
-    overview: "Working on the social media presence of Innovative Designs, an interior design business. The project focuses on Facebook and Instagram page management, promotional content and planning for future Meta Ads campaigns.",
+    tags: [
+      "Practical Training",
+      "Meta Ads",
+      "Messaging Campaign",
+      "Campaign Reporting"
+    ],
+    description: "A small-budget Meta Ads messaging campaign for an educational course, completed as part of practical digital marketing experience.",
+    overview: "Worked on a Meta Ads messaging campaign for TET Skills. The practical work included campaign setup, audience targeting, creative preparation and performance monitoring.",
     strategy: [
-      "Organised the business's Facebook and Instagram presence.",
-      "Prepared social media content around interior design and false ceiling services.",
-      "Created promotional creatives and short-form content.",
-      "Planned Meta Ads activity to support future enquiry generation."
+      "Identified the intended audience for the educational course.",
+      "Prepared promotional ad creative and campaign messaging.",
+      "Set up the campaign using the Meta Ads messaging objective.",
+      "Monitored campaign delivery and messaging performance."
     ],
     results: [
-      "Social media account setup and management activities are underway.",
-      "Promotional content creation and publishing are part of the ongoing work.",
-      "Advertising performance will be added after the campaign is launched and measured."
+      "Recorded 5 messaging conversations started.",
+      "Reported campaign spend of ₹127.11.",
+      "Gained practical exposure to Meta Ads campaign setup and performance monitoring."
+    ],
+    relatedGallery: [
+      "/images/post2.jpg",
+      "/images/post5.jpg"
     ]
   },
   {
@@ -285,7 +308,7 @@ export const projects: Project[] = [
 export const services: Service[] = [
   {
     title: "Meta Ads Campaign Support",
-    description: "Practical Facebook and Instagram advertising support, from campaign setup to basic performance reporting.",
+    description: "Facebook and Instagram advertising support, from campaign setup to performance monitoring and reporting.",
     iconName: "Target",
     details: [
       "Campaign objective selection and setup",
